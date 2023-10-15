@@ -16,10 +16,10 @@ const Navbar = () => {
             {session ? (
               <>
                 <p className='mr-4'> {session.user.email}</p>
+                <Link className='mr-4' href={'/task'}>Task</Link>
                 <button onClick={() => signOut()}>Sign out</button>
               </>
             ) : (
-              // User is not signed in
               <button onClick={() => signIn()}>Sign in</button>
             )}
           </div>
