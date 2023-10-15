@@ -35,7 +35,7 @@ const TaskDetail = (ctx) => {
   };
 
   if (!task) {
-    return <div>Loading task details...</div>;
+    return <div className='text-center'>Loading task details...</div>;
   }
 
   return (

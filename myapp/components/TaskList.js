@@ -38,9 +38,9 @@ const TaskList = () => {
           onChange={handleFilterChange}
         >
           <option value="all">All</option>
-          <option value="open">Open</option>
-          <option value="closed">Closed</option>
-          <option value="progress">Progress</option>
+          <option value="Open">Open</option>
+          <option value="Closed">Closed</option>
+          <option value="Progress">Progress</option>
         </select>
       </div>
       <table className="w-full border-collapse">

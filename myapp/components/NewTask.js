@@ -1,6 +1,7 @@
 'use client'
-
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 
 const NewTask = () => {
@@ -9,7 +10,8 @@ const NewTask = () => {
         desc: '',
         status: 'Open',
       });
-    
+      const router = useRouter(); 
+
       const handleCreateTask = async () => {
         try {
           const response = await axios.post('/api/task', taskData);
@@ -21,6 +23,9 @@ const NewTask = () => {
             desc: '',
             status: 'Open',
           });
+          router.push('/task');
+          document.getElementById('my_modal_3').close(); 
+          window.location.reload();
         } catch (error) {
           console.error('Error creating task:', error);
         }
