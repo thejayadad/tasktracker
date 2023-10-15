@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import EditTask from '@/components/EditTask';
 
 const TaskDetail = (ctx) => {
   const [task, setTask] = useState(null);
@@ -56,12 +57,7 @@ const TaskDetail = (ctx) => {
           <td className="border border-gray-300 text-center py-2">{task.desc}</td>
           <td className="border border-gray-300 text-center py-2">{task.status}</td>
           <td className="border border-gray-300 text-center py-2">
-            <button
-              className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 ml-2"
-              onClick={handleEditTask}
-            >
-              Edit
-            </button>
+          <EditTask ctx={ctx} />
             <button
               className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 ml-2"
               onClick={handleDeleteTask}

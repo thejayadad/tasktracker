@@ -39,9 +39,6 @@ export async function PUT(req, ctx) {
 
     try {
         const body = await req.json()
-        const task = await Task.findById(id)
-
-
         const updatedTask = await Task.findByIdAndUpdate(id, { $set: { ...body } }, { new: true })
 
         return new Response(JSON.stringify(updatedTask), { status: 200 })
