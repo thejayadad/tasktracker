@@ -9,7 +9,7 @@ const Navbar = () => {
     const { data: session } = useSession()
 
    return(
-        <header className="bg-gray-300 px-4 py-12">
+        <header className="px-4 py-12">
         <div className="flex justify-between max-w-screen-xl mx-auto">
           <Link href={'/'}>TaskManager</Link>
           <div className="flex">
