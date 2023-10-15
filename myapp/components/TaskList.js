@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -56,13 +57,14 @@ const TaskList = () => {
               <td className="border border-gray-300 text-center py-2">{task.title}</td>
               <td className="border border-gray-300 text-center">{task.status}</td>
               <td className="border border-gray-300 text-center py-2">
-                <button
+                <Link
+               href={`/task/${task._id}`}
                 className="bg-gray-200 px-3 py-2"
                   onClick={() => {
                   }}
                 >
                   Update
-                </button>
+                </Link>
               </td>
             </tr>
           ))}
