@@ -8,7 +8,7 @@ export async function GET(req){
       const userCount = await User.countDocuments();
       const totalTaskCount = await Task.countDocuments();
       const openTaskCount = await Task.countDocuments({ status: "Open" });
-      const completedTaskCount = await Task.countDocuments({ status: "Completed" });
+      const completedTaskCount = await Task.countDocuments({ status: "Closed" });
       const progressTaskCount = await Task.countDocuments({ status: "Progress" });
       const stats = {
         userCount,
