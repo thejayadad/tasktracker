@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
    <main className='max-w-screen-xl mx-auto'>
-    homePage
+    <h2 className='text-center'>homePage</h2>
    </main>
   )
 }

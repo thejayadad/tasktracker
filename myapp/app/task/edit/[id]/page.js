@@ -30,8 +30,7 @@ const EditTask = (ctx) => {
     
       const handleEditTask = async (e) => {
         try {
-          const response = await axios.put(`/api/task/${ctx.params.id}`, taskData);    
-          router.push('');
+          let response = await axios.put(`/api/task/${ctx.params.id}`, taskData);    
           console.log('Task updated:', response.data);    
         } catch (error) {
           console.error('Error editing task:', error);
