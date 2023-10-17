@@ -1,6 +1,5 @@
 'use client'
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import NewTask from '@/components/NewTask';
 import Stats from '@/components/Stats';
 import TaskList from '@/components/TaskList';

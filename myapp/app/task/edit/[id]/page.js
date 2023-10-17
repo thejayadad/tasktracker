@@ -8,6 +8,7 @@ import SimpleMDE from 'react-simplemde-editor';
 import 'easymde/dist/easymde.min.css';
 
 
+
 const EditTask = (ctx) => {
     const [taskData, setTaskData] = useState({
         title: '',
@@ -30,8 +31,8 @@ const EditTask = (ctx) => {
       const handleEditTask = async (e) => {
         try {
           const response = await axios.put(`/api/task/${ctx.params.id}`, taskData);    
+          router.push('');
           console.log('Task updated:', response.data);    
-          router.push('/task');
         } catch (error) {
           console.error('Error editing task:', error);
         }
