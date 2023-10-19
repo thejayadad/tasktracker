@@ -1,18 +1,18 @@
 import db from "@/lib/db";
 import Task from "@/models/Task";
-import { getServerSession } from "next-auth/next"
 
 
-export async function GET(req){
-    await db.connect()
+export async function GET(req) {
+
+    await db.connect();
     try {
-        const tasks = await Task.find({})
-
-        return new Response(JSON.stringify(tasks), { status: 201 })
+      const tasks = await Task.find({});
+  
+      return new Response(JSON.stringify(tasks), { status: 201 });
     } catch (error) {
-        return new Response(JSON.stringify(null), { status: 500 })
+      return new Response(JSON.stringify(null), { status: 500 });
     }
-}
+  }
 
 
 export async function POST(req) {

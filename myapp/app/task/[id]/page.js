@@ -4,10 +4,18 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useSession } from "next-auth/react"
+
 
 const TaskDetail = (ctx) => {
   const [task, setTask] = useState(null);
   const router = useRouter();
+  const { data: session, status } = useSession()
+
+  if(status !== "authenticated"){
+      return <p className='text-center'>Not Authorized</p>
+  }
+
 
   useEffect(() => {
     axios

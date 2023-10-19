@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation'
 import axios from 'axios';
 import SimpleMDE from 'react-simplemde-editor';
 import 'easymde/dist/easymde.min.css';
+import { useSession } from "next-auth/react"
 
 
 
@@ -16,6 +17,11 @@ const EditTask = (ctx) => {
         status: 'Open',
       });
       const router = useRouter();
+      const { data: session, status } = useSession()
+
+      if(status !== "authenticated"){
+          return <p className='text-center'>Not Authorized</p>
+      }
 
       useEffect(() => {
         axios
